@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" role="img" aria-label="Digital Bookings Icon">
+    <g stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- stylized billboard frame -->
+        <rect x="14" y="18" width="52" height="34" rx="8"/>
+        <!-- stand -->
+        <path d="M30 62h20"/>
+        <path d="M40 52v10"/>
+        <!-- "booking" check mark -->
+        <path d="M26 36l8 8 18-18"/>
+    </g>
+</svg>
