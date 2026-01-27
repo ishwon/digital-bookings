@@ -16,7 +16,7 @@ Digital Bookings is a web-based booking management system designed for La Sentin
 ### Backend
 - **PHP** 8.5
 - **Laravel** 12
-- **MySQL/SQLite** for database
+- **PostgreSQL/SQLite** for database
 
 ### Frontend
 - **Tailwind CSS** 4
@@ -32,7 +32,7 @@ Digital Bookings is a web-based booking management system designed for La Sentin
 - PHP >= 8.5
 - Composer
 - Node.js >= 18
-- MySQL 8.0+ or SQLite
+- PostgreSQL 15+ or SQLite
 - Nginx or Apache
 
 ## Local Development
@@ -61,9 +61,9 @@ Digital Bookings is a web-based booking management system designed for La Sentin
 
 5. Configure your database in `.env`:
    ```env
-   DB_CONNECTION=mysql
+   DB_CONNECTION=pgsql
    DB_HOST=127.0.0.1
-   DB_PORT=3306
+   DB_PORT=5432
    DB_DATABASE=digital_bookings
    DB_USERNAME=your_username
    DB_PASSWORD=your_password
@@ -94,13 +94,13 @@ Update system packages and install required software:
 sudo apt update && sudo apt upgrade -y
 
 # Install PHP 8.5 and required extensions
-sudo apt install -y php8.5 php8.5-fpm php8.5-mysql php8.5-mbstring php8.5-xml php8.5-curl php8.5-zip php8.5-bcmath php8.5-gd
+sudo apt install -y php8.5 php8.5-fpm php8.5-pgsql php8.5-mbstring php8.5-xml php8.5-curl php8.5-zip php8.5-bcmath php8.5-gd
 
 # Install Nginx
 sudo apt install -y nginx
 
-# Install MySQL
-sudo apt install -y mysql-server
+# Install PostgreSQL
+sudo apt install -y postgresql postgresql-contrib
 
 # Install Node.js
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -114,15 +114,15 @@ sudo mv composer.phar /usr/local/bin/composer
 ### 2. Create Database
 
 ```bash
-sudo mysql -u root -p
+sudo -u postgres psql
 ```
 
 ```sql
 CREATE DATABASE digital_bookings;
-CREATE USER 'digital_bookings'@'localhost' IDENTIFIED BY 'your_secure_password';
-GRANT ALL PRIVILEGES ON digital_bookings.* TO 'digital_bookings'@'localhost';
-FLUSH PRIVILEGES;
-EXIT;
+CREATE USER digital_bookings WITH ENCRYPTED PASSWORD 'your_secure_password';
+GRANT ALL PRIVILEGES ON DATABASE digital_bookings TO digital_bookings;
+ALTER DATABASE digital_bookings OWNER TO digital_bookings;
+\q
 ```
 
 ### 3. Deploy Application
@@ -157,9 +157,9 @@ APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://your-domain.com
 
-DB_CONNECTION=mysql
+DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
-DB_PORT=3306
+DB_PORT=5432
 DB_DATABASE=digital_bookings
 DB_USERNAME=digital_bookings
 DB_PASSWORD=your_secure_password
