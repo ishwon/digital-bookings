@@ -80,10 +80,10 @@
                 <!-- Active -->
                 <li>
                   <a
-                    href="#"
-                    class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200"
+                    href="{{ route('home') }}"
+                    class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm {{ request()->routeIs('home') ? 'font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200' : 'text-gray-700 hover:bg-white/70' }}"
                   >
-                    <svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <svg class="h-5 w-5 {{ request()->routeIs('home') ? 'text-gray-900' : 'text-gray-400' }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path d="M9.293 2.293a1 1 0 0 1 1.414 0l6 6A1 1 0 0 1 16 10h-1v6a2 2 0 0 1-2 2h-2a1 1 0 0 1-1-1v-4H10v4a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6H4a1 1 0 0 1-.707-1.707l6-6Z" />
                     </svg>
                     Home
@@ -122,11 +122,11 @@
                 </li>
 
                 <li>
-                  <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-white/70">
-                    <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <a href="{{ route('salespeople.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm {{ request()->routeIs('salespeople.*') ? 'font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200' : 'text-gray-700 hover:bg-white/70' }}">
+                    <svg class="h-5 w-5 {{ request()->routeIs('salespeople.*') ? 'text-gray-900' : 'text-gray-400' }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path d="M10 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM3 16a7 7 0 0 1 14 0v1H3v-1Z" />
                     </svg>
-                    Salespeople
+                    Salespersons
                   </a>
                 </li>
 

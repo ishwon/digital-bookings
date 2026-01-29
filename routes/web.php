@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\SalespersonController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    if (!Auth::check()) {
+    if (! Auth::check()) {
         return redirect()->route('login');
     }
 
@@ -20,6 +21,8 @@ Route::get('/login', function () {
 Route::post('/login', [UserController::class, 'login'])->name('login.store');
 
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::resource('salespeople', SalespersonController::class)->except(['show']);
 
 Route::get('/status', function () {
     return response()->json(['status' => 'ok']);
