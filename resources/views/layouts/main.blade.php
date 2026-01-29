@@ -131,6 +131,15 @@
                 </li>
 
                 <li>
+                  <a href="{{ route('agencies.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm {{ request()->routeIs('agencies.*') ? 'font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200' : 'text-gray-700 hover:bg-white/70' }}">
+                    <svg class="h-5 w-5 {{ request()->routeIs('agencies.*') ? 'text-gray-900' : 'text-gray-400' }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M4 16.5v-13h-.25a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H16v13h.25a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1 0-1.5H4Zm3-11a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5A.75.75 0 0 1 7 5.5Zm.75 2.25a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5ZM8 12a2 2 0 0 1 4 0v4.5H8V12Z" clip-rule="evenodd" />
+                    </svg>
+                    Agencies
+                  </a>
+                </li>
+
+                <li>
                   <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-white/70">
                     <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                       <path
