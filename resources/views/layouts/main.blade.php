@@ -209,7 +209,7 @@
                   class="absolute bottom-full left-0 right-0 mb-2 rounded-xl bg-white shadow-lg ring-1 ring-gray-200 py-1"
                   style="display: none;"
                 >
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                  <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                     Edit Profile
                   </a>
                   <form action="{{ route('logout') }}" method="POST">
