@@ -90,6 +90,7 @@
                   </a>
                 </li>
 
+                {{-- Bookings --}}
                 <li>
                   <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-white/70">
                     <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -99,37 +100,17 @@
                   </a>
                 </li>
 
-                <li>
-                  <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-white/70">
-                    <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path
-                        fill-rule="evenodd"
-                        d="M4 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4Zm3 1a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2H7Z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    Billboards
-                  </a>
-                </li>
-
+                {{-- Clients --}}
                 <li>
                   <a href="{{ route('clients.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm {{ request()->routeIs('clients.*') ? 'font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200' : 'text-gray-700 hover:bg-white/70' }}">
                     <svg class="h-5 w-5 {{ request()->routeIs('clients.*') ? 'text-gray-900' : 'text-gray-400' }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M7 2a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V4a2 2 0 0 0-2-2H7Z" />
+                      <path d="M7 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM14.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM1.615 16.428a1.224 1.224 0 0 1-.569-1.175 6.002 6.002 0 0 1 11.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 0 1 7 18a9.953 9.953 0 0 1-5.385-1.572ZM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 0 0-1.588-3.755 4.502 4.502 0 0 1 5.874 2.636.818.818 0 0 1-.36.98A7.465 7.465 0 0 1 14.5 16Z" />
                     </svg>
                     Clients
                   </a>
                 </li>
 
-                <li>
-                  <a href="{{ route('salespeople.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm {{ request()->routeIs('salespeople.*') ? 'font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200' : 'text-gray-700 hover:bg-white/70' }}">
-                    <svg class="h-5 w-5 {{ request()->routeIs('salespeople.*') ? 'text-gray-900' : 'text-gray-400' }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M10 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM3 16a7 7 0 0 1 14 0v1H3v-1Z" />
-                    </svg>
-                    Salespersons
-                  </a>
-                </li>
-
+                {{-- Agencies --}}
                 <li>
                   <a href="{{ route('agencies.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm {{ request()->routeIs('agencies.*') ? 'font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200' : 'text-gray-700 hover:bg-white/70' }}">
                     <svg class="h-5 w-5 {{ request()->routeIs('agencies.*') ? 'text-gray-900' : 'text-gray-400' }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -139,16 +120,33 @@
                   </a>
                 </li>
 
+                {{-- Placements --}}
                 <li>
                   <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-white/70">
                     <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 2a1 1 0 0 1 1 1v1.05a6.97 6.97 0 0 1 2.06.86l.74-.74a1 1 0 1 1 1.41 1.41l-.74.74c.36.65.64 1.33.86 2.06H17a1 1 0 1 1 0 2h-1.05a6.97 6.97 0 0 1-.86 2.06l.74.74a1 1 0 1 1-1.41 1.41l-.74-.74a6.97 6.97 0 0 1-2.06.86V17a1 1 0 1 1-2 0v-1.05a6.97 6.97 0 0 1-2.06-.86l-.74.74a1 1 0 1 1-1.41-1.41l.74-.74A6.97 6.97 0 0 1 4.05 11H3a1 1 0 1 1 0-2h1.05a6.97 6.97 0 0 1 .86-2.06l-.74-.74a1 1 0 0 1 1.41-1.41l.74.74A6.97 6.97 0 0 1 9 4.05V3a1 1 0 0 1 1-1Zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
-                        clip-rule="evenodd"
-                      />
+                      <path fill-rule="evenodd" d="M4.25 2A2.25 2.25 0 0 0 2 4.25v2.5A2.25 2.25 0 0 0 4.25 9h2.5A2.25 2.25 0 0 0 9 6.75v-2.5A2.25 2.25 0 0 0 6.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 2 13.25v2.5A2.25 2.25 0 0 0 4.25 18h2.5A2.25 2.25 0 0 0 9 15.75v-2.5A2.25 2.25 0 0 0 6.75 11h-2.5Zm9-9A2.25 2.25 0 0 0 11 4.25v2.5A2.25 2.25 0 0 0 13.25 9h2.5A2.25 2.25 0 0 0 18 6.75v-2.5A2.25 2.25 0 0 0 15.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 11 13.25v2.5A2.25 2.25 0 0 0 13.25 18h2.5A2.25 2.25 0 0 0 18 15.75v-2.5A2.25 2.25 0 0 0 15.75 11h-2.5Z" clip-rule="evenodd" />
                     </svg>
-                    Settings
+                    Placements
+                  </a>
+                </li>
+
+                {{-- Salespersons --}}
+                <li>
+                  <a href="{{ route('salespeople.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm {{ request()->routeIs('salespeople.*') ? 'font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-gray-200' : 'text-gray-700 hover:bg-white/70' }}">
+                    <svg class="h-5 w-5 {{ request()->routeIs('salespeople.*') ? 'text-gray-900' : 'text-gray-400' }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path d="M10 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM3 16a7 7 0 0 1 14 0v1H3v-1Z" />
+                    </svg>
+                    Salespersons
+                  </a>
+                </li>
+
+                {{-- Calendar --}}
+                <li>
+                  <a href="#" class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-white/70">
+                    <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M5.75 2a.75.75 0 0 1 .75.75V4h7V2.75a.75.75 0 0 1 1.5 0V4h.25A2.75 2.75 0 0 1 18 6.75v8.5A2.75 2.75 0 0 1 15.25 18H4.75A2.75 2.75 0 0 1 2 15.25v-8.5A2.75 2.75 0 0 1 4.75 4H5V2.75A.75.75 0 0 1 5.75 2Zm-1 5.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h10.5c.69 0 1.25-.56 1.25-1.25v-6.5c0-.69-.56-1.25-1.25-1.25H4.75Z" clip-rule="evenodd" />
+                    </svg>
+                    Calendar
                   </a>
                 </li>
               </ul>
