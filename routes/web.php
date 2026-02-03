@@ -30,6 +30,10 @@ Route::resource('agencies', AgencyController::class);
 
 Route::resource('clients', ClientController::class);
 
+Route::get('/profile', [UserController::class, 'profile'])->name('profile.show');
+Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
+Route::put('/profile/password', [UserController::class, 'updatePassword'])->name('profile.password');
+
 Route::get('/status', function () {
     return response()->json(['status' => 'ok']);
 })->name('echo');
