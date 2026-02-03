@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdatePasswordRequest;
+use App\Http\Requests\UpdateProfileRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -31,5 +35,37 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('login');
+    }
+
+    /**
+     * Display the user's profile.
+     */
+    public function profile(): View
+    {
+        $user = auth()->user();
+
+        return view('profile.show', compact('user'));
+    }
+
+    /**
+     * Update the user's profile details (admin only).
+     */
+    public function updateProfile(UpdateProfileRequest $request): RedirectResponse
+    {
+        auth()->user()->update($request->validated());
+
+        return redirect()->route('profile.show')->with('success', 'Profile updated successfully.');
+    }
+
+    /**
+     * Update the user's password.
+     */
+    public function updatePassword(UpdatePasswordRequest $request): RedirectResponse
+    {
+        auth()->user()->update([
+            'password' => $request->validated()['password'],
+        ]);
+
+        return redirect()->route('profile.show')->with('success', 'Password updated successfully.');
     }
 }
