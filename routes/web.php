@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgencyController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SalespersonController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,8 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::resource('salespeople', SalespersonController::class)->except(['show']);
 
 Route::resource('agencies', AgencyController::class);
+
+Route::resource('clients', ClientController::class);
 
 Route::get('/status', function () {
     return response()->json(['status' => 'ok']);

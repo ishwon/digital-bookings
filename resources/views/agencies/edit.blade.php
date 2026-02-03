@@ -89,7 +89,7 @@
             <div>
               <label for="vat_number" class="block text-sm font-medium text-gray-700">VAT Number</label>
               <div class="mt-2">
-                <input type="number" name="vat_number" id="vat_number" value="{{ old('vat_number', $agency->vat_number) }}"
+                <input name="vat_number" id="vat_number" value="{{ old('vat_number', $agency->vat_number) }}"
                   class="block w-full rounded-lg border @error('vat_number') border-red-500 @else border-gray-200 @enderror bg-white px-4 py-2.5 text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-100" />
               </div>
               @error('vat_number')
@@ -116,7 +116,7 @@
             <div>
               <label for="commission_amount" class="block text-sm font-medium text-gray-700">Amount</label>
               <div class="mt-2">
-                <input type="number" name="commission_amount" id="commission_amount" value="{{ old('commission_amount', $agency->commission_amount) }}" min="0"
+                <input name="commission_amount" id="commission_amount" value="{{ old('commission_amount', $agency->commission_amount) }}" min="0"
                   class="block w-full rounded-lg border @error('commission_amount') border-red-500 @else border-gray-200 @enderror bg-white px-4 py-2.5 text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-100" />
               </div>
               @error('commission_amount')
