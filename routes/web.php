@@ -3,6 +3,7 @@
 use App\Http\Controllers\AgencyController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PlacementController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SalespersonController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,8 @@ Route::resource('agencies', AgencyController::class);
 Route::resource('clients', ClientController::class);
 
 Route::resource('placements', PlacementController::class);
+
+Route::resource('reservations', ReservationController::class);
 
 Route::get('/profile', [UserController::class, 'profile'])->name('profile.show');
 Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
