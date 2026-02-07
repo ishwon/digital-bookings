@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgencyController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PlacementController;
 use App\Http\Controllers\ReservationController;
@@ -35,6 +36,8 @@ Route::resource('clients', ClientController::class);
 Route::resource('placements', PlacementController::class);
 
 Route::resource('reservations', ReservationController::class);
+
+Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
 
 Route::get('/profile', [UserController::class, 'profile'])->name('profile.show');
 Route::put('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
